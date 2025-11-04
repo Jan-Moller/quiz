@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizApp</title>
+    <link rel="stylesheet" href="style.css">
+    <!--Bootstrap integration-->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="db.js"></script>
+    <script src="script.js"></script>
+
+</head>
+
+<body onload="init()">
+    <header>
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">QuizApp</a>
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+        <div class="card main_card">
+            <img src="assets/img/brainbg.jpg" class="card-img-top" alt="Hintergrundbild">
+            <div id="question_section" class="card-body">
+                <h5 class="card-title" id="current_question">Frage</h5>
+
+                <article class="card mb-2 answer_card" onclick="checkAnswer('answer_1')">
+                    <div class="card-body" id="answer_1">
+                        Antwort 1
+                    </div>
+                </article>
+
+                <article class="card mb-2 answer_card" onclick="checkAnswer('answer_2')">
+                    <div class="card-body" id="answer_2">
+                        Antwort 2
+                    </div>
+                </article>
+
+                <article class="card mb-2 answer_card" onclick="checkAnswer('answer_3')">
+                    <div class="card-body" id="answer_3">
+                        Antwort 3
+                    </div>
+                </article>
+
+                <article class="card mb-2 answer_card" onclick="checkAnswer('answer_4')">
+                    <div class="card-body" id="answer_4">
+                        Antwort 4
+                    </div>
+                </article>
+                <footer>
+                    <span><b id="current_question_amount">1</b> von <b id="max_amount_questions">5</b> Fragen</span>
+
+                    <button class="btn btn-primary" id="next_btn" disabled onclick="nextQuestion()">Nächste Frage</button>
+                </footer>
+
+
+            </div>
+
+            <div id="result_section" class="card-body d-none">
+                <P>Das Spiel ist vorbei!</P>
+            </div>
+    </main>
+</body>
+
+</html>
