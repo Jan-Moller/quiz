@@ -25,7 +25,11 @@
 
     <main>
         <div class="card main_card">
-            <img src="assets/img/brainbg.jpg" class="card-img-top" alt="Hintergrundbild">
+            <img id="quiz_img" src="assets/img/brainbg.jpg" class="card-img-top" alt="Hintergrundbild">
+            <div  class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25"
+                aria-valuemin="0" aria-valuemax="100">
+                <div id="progress" class="progress-bar" style="width: 0%">25%</div>
+            </div>
             <div id="question_section" class="card-body">
                 <h5 class="card-title" id="current_question">Frage</h5>
 
@@ -55,14 +59,17 @@
                 <footer>
                     <span><b id="current_question_amount">1</b> von <b id="max_amount_questions">5</b> Fragen</span>
 
-                    <button class="btn btn-primary" id="next_btn" disabled onclick="nextQuestion()">Nächste Frage</button>
+                    <button class="btn btn-primary" id="next_btn" disabled onclick="nextQuestion()">Nächste
+                        Frage</button>
                 </footer>
 
 
             </div>
 
             <div id="result_section" class="card-body d-none">
-                <P>Das Spiel ist vorbei!</P>
+                <h2>Das Spiel ist vorbei!</h2>
+                <p>Du hast <b id="correct_answers">XX</b> von <b id="total_questions">XX</b> Punkten erreicht!</p>
+                <button class="btn btn-primary" id="next_game" onclick="nextGame()">Spiel wiederholen</button>
             </div>
     </main>
 </body>
